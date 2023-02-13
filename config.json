@@ -1,0 +1,16 @@
+{
+    "params": {
+        "local_server": "True",
+        "local_uri": "mysql://root:@localhost/isoconix",
+        "prod_uri": "mysql://root:@localhost/isoconix",
+        "fb_url": "https://facebook.com/shivpratap.official",
+        "tw_url": "https://facebook.com/shivpratap.official",
+        "gh_url": "https://facebook.com/shivpratap.official",
+        "gmail-user": "isoconix@gmail.com",
+        "gmail-password": "omrvowskalqvvjfk",
+        "no_of_posts": "6",
+        "admin_user": "Shiv",
+        "admin_password": "Shiv@0047",
+        "upload_location": "C:\\Users\\Lenovo\\Desktop\\Isoconix\\static"
+    }
+}

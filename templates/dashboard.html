@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<main id="main" data-aos="fade-in">
+
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <h2>Welcome to Admin Dashboard</h2>
+            <p>Here you can edit the posts and do other administrative work. </p>
+        </div>
+    </div><!-- End Breadcrumbs -->
+    <!-- ======= Events Section ======= -->
+    <section id="events" class="events">
+        <div class="container" data-aos="fade-up">
+            <h2>Basic Actions</h2>
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="/edit/0">
+                    <button class="btn btn-primary">Add a new post</button>
+                </a>
+                <a href="/logout">
+                    <button class="btn btn-danger">Logout</button>
+                </a>
+            </div>
+            <hr>
+
+            <h1>Upload a File</h1>
+            <form action="/uploader" method="post" enctype="multipart/form-data">
+
+                <div class="form-group d-flex align-items-center">
+                    <input type="file" name="file1" class="form-control-file">
+                    <button type="submit" class="btn btn-success btn-lg ml-3">Submit</button>
+                </div>
+            </form>
+
+
+
+
+            <hr>
+            <h1>Edit Posts:</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">S/No.</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for post in posts %}
+                    <tr>
+                        <th scope="row">{{post.sno}}</th>
+                        <td>{{post.title}}</td>
+                        <td>{{post.date}}</td>
+                        <td><a href="/edit/{{post.sno}}"><button class="btn btn-primary btn-sm">Edit</button></a></td>
+                        <td><a href="/delete/{{post.sno}}"><button class="btn btn-danger btn-sm">Delete</button></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </section><!-- End Events Section -->
+
+
+</main><!-- End #main -->
+
+{% endblock %}

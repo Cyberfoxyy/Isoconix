@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<main id="main" data-aos="fade-in">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <h2>Welcome to Editing Dashboard</h2>
+            <p>Here you can edit the posts. </p>
+        </div>
+    </div><!-- End Breadcrumbs -->
+    <!-- ======= Events Section ======= -->
+    <section id="events" class="events">
+        <div class="container" data-aos="fade-up">
+
+            <h2>Basic Actions</h2>
+            <a href="/edit/0" class="btn btn-success">Add a new post</a>
+            <a href="/logout" class="btn btn-secondary mr-3">Logout</a>
+            <a href="/dashboard" class="btn btn-success">Dashboard</a>
+
+            <hr>
+
+            <h1>Add/Edit Posts</h1>
+            <div class="col-lg-8 mt-5 mt-lg-0">
+
+                <form action="/edit/{{sno}}" method="post" role="form" class="php-email-form">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input type="text" name="title" class="form-control" id="title" placeholder="Title"
+                                value="{{post.title}}" required>
+                        </div>
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                            <input type="text" class="form-control" name="img_file" id="img_file"
+                                placeholder="Image File" value="{{post.img_file}}" required>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="text" class="form-control" name="slug" id="slug" placeholder="Slug"
+                            value="{{post.slug}}" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea class="form-control" name="content" id="content" rows="5"
+                            placeholder="Enter Content Here.." required>{{post.content}}</textarea>
+                    </div>
+                    <br>
+                    <div class="text-center"><button class="get-started-btn" type="submit">Submit</button></div>
+                </form>
+
+            </div>
+
+        </div>
+    </section><!-- End Events Section -->
+
+</main><!-- End #main -->
+
+{% endblock %}
